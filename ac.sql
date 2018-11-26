@@ -4,7 +4,6 @@ set feedback on
 set longchunksize 999999
 set long 999999
 set trimout on
-set space 1
 set tab off
 
 col machine for a35
