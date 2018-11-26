@@ -3,4 +3,5 @@ SET sqlformat ansiconsole
 define r=https://raw.githubusercontent.com/msavdert/sql/master
 alias ac=@&r\ac;
 alias ts=@&r\ts;
+alias smon=@&r\smon;
 @https://raw.githubusercontent.com/msavdert/sql/master/i.sql
