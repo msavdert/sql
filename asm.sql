@@ -14,8 +14,8 @@ SELECT g.group_number  "Group"
 ,      ROUND((g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)/1024),2) Total_GB
 ,      ROUND((g.free_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)/1024),2) Free_GB
 --,      ROUND(((g.free_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1))/(g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)))*100,2) ||'%' PCT
-,      ROUND(100*(max((d.total_mb-d.free_mb)/d.total_mb)-min((d.total_mb-d.free_mb)/d.total_mb))/max((d.total_mb-d.free_mb)/d.total_mb),0) "Imbalance"
-,      ROUND(100*(max(d.total_mb)-min(d.total_mb))/max(d.total_mb),0) "Variance"
+,      ROUND(100*(max((d.total_mb-d.free_mb)/d.total_mb)-min((d.total_mb-d.free_mb)/d.total_mb))/max((d.total_mb-d.free_mb)/d.total_mb),2) "Imbalance"
+,      ROUND(100*(max(d.total_mb)-min(d.total_mb))/max(d.total_mb),2) "Variance"
 ,      ROUND(100*(min(d.free_mb/d.total_mb)),0) "MinFree"
 ,      ROUND(100*(max(d.free_mb/d.total_mb)),0) "MaxFree"
 ,      count(*)        "DiskCnt"
