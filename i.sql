@@ -21,6 +21,4 @@ dbms_output.put_line('DATABASE VERSION: ' ||dbms_db_version.version || '.' || db
 end;
 /
 
-col current_scn for 9999999999999999
-
 select name, instance_name, open_mode, database_role, flashback_on , current_scn from v$database,v$instance;
