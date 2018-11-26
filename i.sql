@@ -15,7 +15,7 @@ dbms_output.put_line('DATABASE ROLE: '||sys_context('userenv','database_role'));
 dbms_output.put_line('OS USER: '||sys_context('userenv','os_user'));
 dbms_output.put_line('CLIENT IP ADDRESS: '||sys_context('userenv','ip_address'));
 dbms_output.put_line('CLIENT HOSTNAME: '||sys_context('userenv','host'));
-dbms_output.put_line('SERVER IP ADDRESS: ' || UTL_INADDR.GET_HOST_ADDRESS);
+--dbms_output.put_line('SERVER IP ADDRESS: ' || UTL_INADDR.GET_HOST_ADDRESS);
 dbms_output.put_line('SERVER HOSTNAME: '||sys_context('userenv','server_host'));
 dbms_output.put_line('DATABASE VERSION: ' ||dbms_db_version.version || '.' || dbms_db_version.release);
 end;
