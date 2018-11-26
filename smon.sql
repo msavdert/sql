@@ -1,20 +1,3 @@
-set linesize 300
-set pagesize 9999
-set feedback on
-set longchunksize 999999
-set long 999999
-set trimout on
-set space 1
-set tab off
-
-col sql_exec_start format a25
-col username format a25
-col status format a20
-col sess_serial format 99999
-col Kill_Script format a55
-col SQL_OPNAME format a10
-col sid format 999999
-
 SELECT *
      FROM
        (SELECT 
@@ -64,7 +47,7 @@ SELECT *
          CASE 
             WHEN (STATUS = 'EXECUTING')
                 THEN ROUND((sysdate-sql_exec_start) * 3600*24,0)
-            ELSE ROUN((last_refresh_time-sql_exec_start) * 3600*24,0)
+            ELSE ROUND((last_refresh_time-sql_exec_start) * 3600*24,0)
          END AS "Elapsed (s)",
 --       ROUND(elapsed_time/1000000)                      AS "Elapsed (s)",
          ROUND(cpu_time    /1000000)                      AS "CPU (s)",
@@ -83,11 +66,3 @@ SELECT *
        )
      WHERE STATUS <> 'EXECUTING'
 	 AND rownum < 15;
-	 
-	-- sysdate-sql_exec_start ///execute ise değilse;
-	-- last refresh-sql_exec_start
-	 
-	-- case status='EXECUTING'
-	-- (sysdate-sql_exec_start) * 3600*24
-	--else 
-	-- (last_refresh_time-sql_exec_start* 3600*24
