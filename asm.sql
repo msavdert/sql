@@ -66,8 +66,6 @@ from   v$asm_file f,v$asm_diskgroup g
 where  f.group_number=g.group_number
 group by g.name,f.TYPE,f.BLOCK_SIZE,f.STRIPED
 order by 1,2;
-
-clear break
  
 prompt Instances currently accessing these diskgroups
 prompt ==============================================
@@ -92,5 +90,4 @@ order by path;
  
 prompt Current ASM disk operations
 prompt ===========================
-select *
-from   v$asm_operation;
+select * from   v$asm_operation;
