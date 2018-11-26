@@ -18,16 +18,16 @@ def SQLPATH=""
 
 -- set SQLPATH variable to either Unix or Windows format
 
-def SQLPATH=$SQLPATH -- (Unix/Mac OSX)
---def SQLPATH=%SQLPATH% -- (Windows)
+--def SQLPATH=$SQLPATH -- (Unix/Mac OSX)
+def SQLPATH=%SQLPATH% -- (Windows)
 
 
--- def _start=start   -- Windows
+def _start=start   -- Windows
 -- def _start=firefox -- Unix/Linux
-def _start=open -- MacOS
+-- def _start=open -- MacOS
 
-def _delete="rm -f" -- Unix/MacOSX
--- def _delete="del" -- Windows
+-- def _delete="rm -f" -- Unix/MacOSX
+def _delete="del" -- Windows
 
 def _tpt_tempdir=&SQLPATH/tmp
 
@@ -110,7 +110,7 @@ def _tpt_tempdir=&SQLPATH/tmp
 -- return control back to sqlplus immediately after launching
 -- notepad (so that you can continue typing in sqlplus
 
-	define _editor="vi -c 'set notitle'"  
+--	define _editor="vi -c 'set notitle'"  
 --	define _external_editor="/Applications/Terminator.app/Contents/MacOS/Terminator vi "  
 
 -- assign the tracefile name to trc variable
