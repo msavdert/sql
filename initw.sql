@@ -23,8 +23,6 @@ column name_col_plus_show_param format a36 heading NAME
 column type_col_plus_show_param format a36 heading TYPE
 column value_col_plus_show_param format a60 heading VALUE
 
--- For backward compatibility
-set pagesize 14
 --SET SQLPLUSCOMPATIBILITY 10.1.0
 
 -- Defaults for SET AUTOTRACE EXPLAIN report
@@ -41,12 +39,14 @@ set arraysize 1
 set termout off
 set verify off
 set feedback on
+set trimspool on
 serveroutput on
+set trimout on
+set tab off
 set feedback off
 
 SET sqlformat ansiconsole
 
-set termout off
 define new_prompt='nolog'
 define_editor = "C:\Windows\System32\notepad.exe"
 column value new_value new_prompt
@@ -58,9 +58,9 @@ select username || '@' ||
   value
 from  v$instance, user_users;
 set sqlprompt "&new_prompt> "
-set termout on
 ALTER SESSION SET NLS_DATE_FORMAT='YYY-MM-DD HH24:MI:SS'; 
 ALTER SESSION SET NLS_TIMESTAMP_FORMAT='YYYY-MM-DD HH24:MI:SS.FF'; 
 set feedback on
 
 @https://raw.githubusercontent.com/msavdert/sql/master/i.sql
+set termout on
