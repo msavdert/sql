@@ -67,8 +67,8 @@ and
 
 -- Windows CMD.exe specific stuff
 
---host title &_i_user@&_i_conn [sid=&mysid ser#=&_i_serial spid=&_i_spid inst=&_i_inst host=&_i_host cpid=&_i_cpid opid=&_i_opid]
---host doskey /exename=sqlplus.exe desc=set lines 80 sqlprompt ""$Tdescribe $*$Tset lines 299 sqlprompt "SQL> "
+host title &_i_user@&_i_conn [sid=&mysid ser#=&_i_serial spid=&_i_spid inst=&_i_inst host=&_i_host cpid=&_i_cpid opid=&_i_opid]
+host doskey /exename=sqlplus.exe desc=set lines 80 sqlprompt ""$Tdescribe $*$Tset lines 299 sqlprompt "SQL> "
 
 -- short xterm title
 host echo -ne "\033]0;&_i_user@&_i_inst &mysid[&_i_spid]\007"
