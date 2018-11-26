@@ -1,4 +1,3 @@
-SET FEEDBACK OFF
 set serveroutput on
 declare
 v_version number;
@@ -25,4 +24,3 @@ end;
 col current_scn for 9999999999999999
 
 select name, instance_name, open_mode, database_role, flashback_on , current_scn from v$database,v$instance;
-SET FEEDBACK ON
