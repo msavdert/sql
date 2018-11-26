@@ -1,5 +1,8 @@
 SET sqlprompt "_user'@'_connect_identifier >"
 SET sqlformat ansiconsole
+ALTER SESSION SET NLS_DATE_FORMAT='YYYY-MM-DD HH24:MI:SS';
+ALTER SESSION SET NLS_TIMESTAMP_FORMAT='YYYY-MM-DD HH24:MI:SS.FF';
+ALTER SESSION SET NLS_LANGUAGE='AMERICAN';
 define r=https://raw.githubusercontent.com/msavdert/sql/master
 alias ac=@&r\ac;
 alias ac2=@&r\ac2;
