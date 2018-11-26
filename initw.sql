@@ -59,6 +59,8 @@ select username || '@' ||
 from  v$instance, user_users;
 set sqlprompt "&new_prompt> "
 set termout on
-ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY HH24:MI:SS'; 
-ALTER SESSION SET NLS_TIMESTAMP_FORMAT='DD-MM-YYYY HH24:MI:SS.FF'; 
+ALTER SESSION SET NLS_DATE_FORMAT='YYY-MM-DD HH24:MI:SS'; 
+ALTER SESSION SET NLS_TIMESTAMP_FORMAT='YYYY-MM-DD HH24:MI:SS.FF'; 
 set feedback on
+
+@https://raw.githubusercontent.com/msavdert/sql/master/i.sql
