@@ -50,3 +50,5 @@ SELECT    'alter package '
  WHERE     object_type IN ('TYPE BODY', 'PACKAGE BODY')
        AND status = 'INVALID'
        AND (owner LIKE 'USR%' OR LOWER (owner) = LOWER ('&1'));
+       
+UNDEF 1
