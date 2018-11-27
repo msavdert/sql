@@ -25,4 +25,4 @@ alias rl=@&r\rl;
 alias rls=@&r\rls;
 alias topsql=@&r\topsql;
 alias iobj=@&r\iobj;
-alias abc=sta https://raw.githubusercontent.com/msavdert/sql/master/iobj.sql;
+alias abc="sta https://raw.githubusercontent.com/msavdert/sql/master/iobj.sql";
