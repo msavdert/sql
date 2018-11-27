@@ -1,7 +1,7 @@
 SELECT object_type, COUNT (object_type)
     FROM dba_objects
    WHERE     status <> 'VALID'
-         AND (owner LIKE 'USR%' OR LOWER (owner) = LOWER (':1'))
+         AND (owner LIKE 'USR%' OR LOWER (owner) = LOWER ('&1'))
 GROUP BY object_type
 ORDER BY object_type;
 
@@ -50,4 +50,3 @@ SELECT    'alter package '
  WHERE     object_type IN ('TYPE BODY', 'PACKAGE BODY')
        AND status = 'INVALID'
        AND (owner LIKE 'USR%' OR LOWER (owner) = LOWER ('&&1'));
-undef 1
