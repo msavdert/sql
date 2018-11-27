@@ -12,4 +12,12 @@ alias smon=@&r\smon;
 alias fra=@&r\fra;
 alias asm=@&r\asm;
 alias ash=@&r\ash;
+alias whoami=@&r\whoami;
+alias block=@&r\block;
+alias dbsize=@&r\dbsize;
+alias lops=@&r\lops;
+alias rl=@&r\rl;
+alias rls=@&r\rls;
+alias topsql=@&r\topsql;
+alias iobj=@&r\iobj;
 @https://raw.githubusercontent.com/msavdert/sql/master/i.sql
