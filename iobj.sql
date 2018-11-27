@@ -1,4 +1,4 @@
-SET tab OFF
+SET FEEDBACK ON
 
   SELECT object_type, COUNT (object_type)
     FROM dba_objects
