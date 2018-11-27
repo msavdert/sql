@@ -22,5 +22,5 @@ alias lops=@&r\lops;
 alias rl=@&r\rl;
 alias rls=@&r\rls;
 alias topsql=@&r\topsql;
-alias iobj https://raw.githubusercontent.com/msavdert/sql/master/iobj
+alias iobj=https://raw.githubusercontent.com/msavdert/sql/master/iobj
 @https://raw.githubusercontent.com/msavdert/sql/master/i.sql
