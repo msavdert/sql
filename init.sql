@@ -24,4 +24,4 @@ alias lops=@&r\lops;
 alias rl=@&r\rl;
 alias rls=@&r\rls;
 alias topsql=@&r\topsql;
-alias iobj=@&r\iobj;
+alias iobj=@&r/iobj;
