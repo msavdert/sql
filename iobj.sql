@@ -1,4 +1,4 @@
-SET TRIMOUT ON
+SET tab OFF
 
   SELECT object_type, COUNT (object_type)
     FROM dba_objects
