@@ -7,6 +7,8 @@ SET VERIFY OFF
 ALTER SESSION SET NLS_DATE_FORMAT='YYYY-MM-DD HH24:MI:SS';
 ALTER SESSION SET NLS_TIMESTAMP_FORMAT='YYYY-MM-DD HH24:MI:SS.FF';
 ALTER SESSION SET NLS_LANGUAGE='AMERICAN';
+@https://raw.githubusercontent.com/msavdert/sql/master/i.sql
+--Define
 define r=https://raw.githubusercontent.com/msavdert/sql/master
 alias ac=@&r\ac;
 alias ac2=@&r\ac2;
@@ -23,4 +25,3 @@ alias rl=@&r\rl;
 alias rls=@&r\rls;
 alias topsql=@&r\topsql;
 alias iobj=@&r\iobj;
-@https://raw.githubusercontent.com/msavdert/sql/master/i.sql
