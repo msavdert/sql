@@ -4,7 +4,12 @@ SET FEEDBACK ON
 SET LONGCHUNKSIZE 999999
 SET LONG 999999
 SET TRIMOUT ON
+SET SPACE 1
 SET tab OFF
+
+COL script FOR a100
+COL cmd FOR a150
+
 
   SELECT object_type, COUNT (object_type)
     FROM dba_objects
