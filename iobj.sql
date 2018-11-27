@@ -1,7 +1,7 @@
 SELECT object_type, COUNT (object_type)
     FROM dba_objects
    WHERE     status <> 'VALID'
-         AND (owner LIKE 'USR%' OR LOWER (owner) = LOWER ('&1'))
+         AND (owner LIKE 'USR%' OR LOWER (owner) = LOWER (':1'))
 GROUP BY object_type
 ORDER BY object_type;
 
@@ -17,7 +17,7 @@ SELECT    'create or replace synonym '
            AS cmd
   FROM dba_objects
  WHERE     object_type = 'SYNONYM'
-       AND (owner LIKE 'USR%' OR LOWER (owner) = LOWER ('&1'))
+       AND (owner LIKE 'USR%' OR LOWER (owner) = LOWER ('&&1'))
        AND status = 'INVALID';
 
 SELECT    'alter '
@@ -37,7 +37,7 @@ SELECT    'alter '
                            'TYPE',
                            'PACKAGE')
        AND status = 'INVALID'
-       AND (owner LIKE 'USR%' OR LOWER (owner) = LOWER ('&1'));
+       AND (owner LIKE 'USR%' OR LOWER (owner) = LOWER ('&&1'));
        
 
 SELECT    'alter package '
@@ -49,4 +49,4 @@ SELECT    'alter package '
   FROM dba_objects
  WHERE     object_type IN ('TYPE BODY', 'PACKAGE BODY')
        AND status = 'INVALID'
-       AND (owner LIKE 'USR%' OR LOWER (owner) = LOWER ('&1'));
+       AND (owner LIKE 'USR%' OR LOWER (owner) = LOWER ('&&1'));
