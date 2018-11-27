@@ -1,4 +1,4 @@
-SET FEEDBACK ON
+SET SPACE 1
 
   SELECT object_type, COUNT (object_type)
     FROM dba_objects
