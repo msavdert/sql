@@ -32,4 +32,12 @@
             </query>
         </queries>
     </alias>
+    <alias name="whoami">
+        <description><![CDATA[show whoami output]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\whoami]]></sql>
+            </query>
+        </queries>
+    </alias>
 </aliases>
