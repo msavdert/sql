@@ -13,4 +13,6 @@ define r=https://raw.githubusercontent.com/msavdert/sql/master
 
 -- aliases.xml
 alias ac=@&r\ac;
-alias bck=@&r\backup :DAY;
+alias desc ac Active Sessions
+alias backup=@&r\backup :DAY;
+alias desc backup backup <DAY> - show last N DAY Backup 
