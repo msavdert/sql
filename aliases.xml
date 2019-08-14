@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<aliases>
+    <alias name="backup">
+        <description><![CDATA[show active sessions]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\ac]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="backup">
+        <description><![CDATA[backup <DAY> - show last N DAY Backup]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\backup :DAY]]></sql>
+            </query>
+        </queries>
+    </alias>
+</aliases>
