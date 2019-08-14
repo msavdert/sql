@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <aliases>
-    <alias name="backup">
+    <alias name="ac">
         <description><![CDATA[show active sessions]]></description>
         <queries>
             <query>
                 <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\ac]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="ac2">
+        <description><![CDATA[show active sessions detail]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\ac2]]></sql>
             </query>
         </queries>
     </alias>
