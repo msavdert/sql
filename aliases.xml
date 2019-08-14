@@ -24,4 +24,12 @@
             </query>
         </queries>
     </alias>
+    <alias name="gs">
+        <description><![CDATA[gs <sql_id> - get sql_text from sql_id]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\gs :sql_id]]></sql>
+            </query>
+        </queries>
+    </alias>
 </aliases>
