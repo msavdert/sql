@@ -12,11 +12,3 @@ ALTER SESSION SET NLS_LANGUAGE='AMERICAN';
 alias load https://raw.githubusercontent.com/msavdert/sql/master/aliases.xml
 
 @https://raw.githubusercontent.com/msavdert/sql/master/whoami.sql
-
---Define
---define r=https://raw.githubusercontent.com/msavdert/sql/master
--- aliases.xml
---alias ac=@&r\ac;
---alias desc ac Active Sessions
---alias backup=@&r\backup :DAY;
---alias desc backup backup <DAY> - show last N DAY Backup 
