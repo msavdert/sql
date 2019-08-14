@@ -21,4 +21,6 @@ dbms_output.put_line('DATABASE VERSION: ' ||dbms_db_version.version || '.' || db
 end;
 /
 
-select name, instance_name, open_mode, database_role, flashback_on , current_scn from v$database,v$instance;
+select name, instance_name, open_mode, database_role, log_mode, flashback_on , current_scn from v$database,v$instance
+/
+set serveroutput off
