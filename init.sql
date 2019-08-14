@@ -11,4 +11,4 @@ ALTER SESSION SET NLS_LANGUAGE='AMERICAN';
 
 alias load https://raw.githubusercontent.com/msavdert/sql/master/aliases.xml
 
-@https://raw.githubusercontent.com/msavdert/sql/master/whoami.sql
+@https://raw.githubusercontent.com/msavdert/sql/master/i.sql
