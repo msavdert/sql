@@ -1,26 +1,37 @@
-set serveroutput on
-declare
-v_version number;
-begin
-SELECT substr(version,0,2) into v_version FROM v$instance;
-dbms_output.put_line('USER: '||sys_context('userenv','session_user'));
-dbms_output.put_line('SESSION ID: '||sys_context('userenv','sid'));
-dbms_output.put_line('CURRENT_SCHEMA: '||sys_context('userenv','current_schema'));
-dbms_output.put_line('INSTANCE NAME: '||sys_context('userenv','instance_name'));
-if v_version >= 12 then
-dbms_output.put_line('CDB NAME: '||sys_context('userenv','cdb_name'));
-dbms_output.put_line('CONTAINER NAME: '||sys_context('userenv','con_name'));
-end if;
-dbms_output.put_line('DATABASE ROLE: '||sys_context('userenv','database_role'));
-dbms_output.put_line('OS USER: '||sys_context('userenv','os_user'));
-dbms_output.put_line('CLIENT IP ADDRESS: '||sys_context('userenv','ip_address'));
-dbms_output.put_line('CLIENT HOSTNAME: '||sys_context('userenv','host'));
---dbms_output.put_line('SERVER IP ADDRESS: ' || UTL_INADDR.GET_HOST_ADDRESS);
-dbms_output.put_line('SERVER HOSTNAME: '||sys_context('userenv','server_host'));
-dbms_output.put_line('DATABASE VERSION: ' ||dbms_db_version.version || '.' || dbms_db_version.release);
-end;
-/
+col username noprint new_value user
+col instance_name noprint new_value _instance_name
+col inst noprint new_value _inst
+col sid noprint new_value _sid
+col serial noprint new_value _serial
+col spid noprint new_value _spid
 
-select name, instance_name, open_mode, database_role, log_mode, flashback_on , current_scn from v$database,v$instance
-/
-set serveroutput off
+select 
+	s.username username, 
+    i.instance_name instance_name,
+--  (CASE WHEN TO_NUMBER(SUBSTR(i.version, 1, instr(i.version,'.',1)-1)) >= 12 THEN (SELECT SYS_CONTEXT('userenv', 'con_name') FROM dual)||'-'||i.instance_name ELSE i.instance_name END) instance_name,
+	i.host_name host_name,
+    i.instance_number inst,
+	to_char(s.sid) sid, 
+	to_char(s.serial#) serial, 
+	(select substr(banner, instr(banner, 'Release ')+8,10) from v$version where rownum = 1) ver,
+	(select  substr(substr(banner, instr(banner, 'Release ')+8),1,
+			instr(substr(banner, instr(banner, 'Release ')+8),'.')-1)
+	 from v$version 
+	 where rownum = 1) myoraver,
+	to_char(startup_time, 'YYYYMMDD') startup_day, 
+	trim(p.spid) spid, 
+	trim(to_char(p.pid)) opid, 
+	s.process cpid, 
+	s.saddr saddr, 
+	p.addr paddr,
+    sys_context('userenv', 'database_role') db_role
+from 
+	v$session s, 
+	v$instance i, 
+	v$process p
+where 
+	s.paddr = p.addr
+and 
+	sid = (select sid from v$mystat where rownum = 1);
+
+host title &user@&_instance_name [inst=&_inst sid=&_sid ser#=&_serial spid=&_spid]
