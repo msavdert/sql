@@ -40,4 +40,20 @@
             </query>
         </queries>
     </alias>
+    <alias name="ts">
+        <description><![CDATA[show tablespace usage]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\ts]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="block">
+        <description><![CDATA[show blocking sessions]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\block]]></sql>
+            </query>
+        </queries>
+    </alias>
 </aliases>
