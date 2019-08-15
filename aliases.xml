@@ -124,7 +124,7 @@
         <description><![CDATA[kill <sid> <serial#> <inst_id> - kill session]]></description>
         <queries>
             <query>
-                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\kill :sql_id :serial :inst_id]]></sql>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\kill :sid :serial :inst_id]]></sql>
             </query>
         </queries>
     </alias>
