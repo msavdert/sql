@@ -5,28 +5,22 @@ prompt
 prompt ASM Disk Groups
 prompt ===============
 
-SELECT g.group_number  "Group"
-,      g.name          "Group Name"
-,      g.state         "State"
-,      g.type          "Type"
---,      g.total_mb/1024 "Total GB"
---,      g.free_mb/1024  "Free GB"
-,      ROUND((g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)/1024),2) Total_GB
-,      ROUND((g.free_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)/1024),2) Free_GB
---,      ROUND(((g.free_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1))/(g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)))*100,2) ||'%' PCT
-,      ROUND(100*(max((d.total_mb-d.free_mb)/d.total_mb)-min((d.total_mb-d.free_mb)/d.total_mb))/max((d.total_mb-d.free_mb)/d.total_mb),2) "Imbalance"
-,      ROUND(100*(max(d.total_mb)-min(d.total_mb))/max(d.total_mb),2) "Variance"
-,      ROUND(100*(min(d.free_mb/d.total_mb)),0) "MinFree"
-,      ROUND(100*(max(d.free_mb/d.total_mb)),0) "MaxFree"
-,      count(*)        "DiskCnt"
+SELECT g.group_number gn
+,      g.name         name
+,      g.state        state
+,      g.type         type
+,      (g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)) total_mb
+,      (g.free_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)) free_mb
+,      (g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1))- (g.free_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)) used_mb
+,      ROUND(((g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1))-(g.free_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)))/(g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1))*100,1) used_pct
 FROM v$asm_disk d, v$asm_diskgroup g
 WHERE d.group_number = g.group_number and
 d.group_number <> 0 and
 d.state = 'NORMAL' and
 d.mount_status = 'CACHED'
 GROUP BY g.group_number, g.name, g.state, g.type, g.total_mb, g.free_mb
-ORDER BY 1;
-
+ORDER BY used_pct DESC;
+                                                                                                                                     
 prompt ASM Disks In Use
 prompt ================
 
