@@ -56,4 +56,68 @@
             </query>
         </queries>
     </alias>
+    <alias name="iobj">
+        <description><![CDATA[show invalid objects]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\iobj]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="dgstat">
+        <description><![CDATA[show dataguard status]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\dgstat]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="fra">
+        <description><![CDATA[show fra info]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\fra]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="smon">
+        <description><![CDATA[show sql monitor]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\smon]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="redolog">
+        <description><![CDATA[show redolog info]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\redolog]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="lops">
+        <description><![CDATA[show longops]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\lops]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="lsf">
+        <description><![CDATA[show log switch frequency]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\lsf]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="asm">
+        <description><![CDATA[show asm storage status]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\asm]]></sql>
+            </query>
+        </queries>
+    </alias>
 </aliases>
