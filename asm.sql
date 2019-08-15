@@ -9,9 +9,9 @@ SELECT g.group_number gn
 ,      g.name         name
 ,      g.state        state
 ,      g.type         type
-,      (g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)) total_mb
-,      (g.free_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)) free_mb
-,      (g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1))- (g.free_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)) used_mb
+,      ROUND((g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1))) total_mb
+,      ROUND((g.free_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1))) free_mb
+,      ROUND((g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1))- (g.free_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1))) used_mb
 ,      ROUND(((g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1))-(g.free_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1)))/(g.total_mb/decode(g.type,'NORMAL',2,'HIGH',3,'EXTERN',1))*100,1) used_pct
 FROM v$asm_disk d, v$asm_diskgroup g
 WHERE d.group_number = g.group_number and
@@ -19,7 +19,7 @@ d.group_number <> 0 and
 d.state = 'NORMAL' and
 d.mount_status = 'CACHED'
 GROUP BY g.group_number, g.name, g.state, g.type, g.total_mb, g.free_mb
-ORDER BY used_pct DESC;
+ORDER BY c8 DESC
                                                                                                                                      
 prompt ASM Disks In Use
 prompt ================
