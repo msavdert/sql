@@ -19,14 +19,7 @@ SELECT *
          ROUND(cpu_time    /1000000)                      AS "CPU (s)",
          buffer_gets,
          ROUND(physical_read_bytes /(1024*1024)) AS "Phys reads (MB)",
-         ROUND(physical_write_bytes/(1024*1024)) AS "Phys writes (MB)",
-                               'ALTER SYSTEM KILL SESSION '''
-                               ||sid
-                               ||','
-                               ||session_serial#
-                               ||',@'
-                               ||inst_id
-                               || ''' IMMEDIATE;' Kill_Script
+         ROUND(physical_write_bytes/(1024*1024)) AS "Phys writes (MB)"
        FROM gv$sql_monitor
        ORDER BY  sql_exec_start DESC
        )
@@ -53,14 +46,7 @@ SELECT *
          ROUND(cpu_time    /1000000)                      AS "CPU (s)",
          buffer_gets,
          ROUND(physical_read_bytes /(1024*1024)) AS "Phys reads (MB)",
-         ROUND(physical_write_bytes/(1024*1024)) AS "Phys writes (MB)",
-                               'ALTER SYSTEM KILL SESSION '''
-                               ||sid
-                               ||','
-                               ||session_serial#
-                               ||',@'
-                               ||inst_id
-                               || ''' IMMEDIATE;' Kill_Script
+         ROUND(physical_write_bytes/(1024*1024)) AS "Phys writes (MB)"
        FROM gv$sql_monitor
        ORDER BY  sql_exec_start DESC
        )
