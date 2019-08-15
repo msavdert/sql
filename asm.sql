@@ -19,7 +19,7 @@ d.group_number <> 0 and
 d.state = 'NORMAL' and
 d.mount_status = 'CACHED'
 GROUP BY g.group_number, g.name, g.state, g.type, g.total_mb, g.free_mb
-ORDER BY c8 DESC
+ORDER BY used_pct DESC
                                                                                                                                      
 prompt ASM Disks In Use
 prompt ================
