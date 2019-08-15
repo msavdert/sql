@@ -144,4 +144,12 @@
             </query>
         </queries>
     </alias>
+    <alias name="backup">
+        <description><![CDATA[sqlmon <session_id> - Spool a SQL Monitoring report to a local HTML file and open it]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\sqlmon :1]]></sql>
+            </query>
+        </queries>
+    </alias>
 </aliases>
