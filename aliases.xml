@@ -56,11 +56,11 @@
             </query>
         </queries>
     </alias>
-    <alias name="iobj">
+    <alias name="invalid">
         <description><![CDATA[show invalid objects]]></description>
         <queries>
             <query>
-                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\iobj]]></sql>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\invalid]]></sql>
             </query>
         </queries>
     </alias>
