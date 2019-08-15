@@ -1,5 +1,7 @@
 SET sqlprompt "@|red _user|@'@'_connect_identifier>"
 SET sqlformat ansiconsole
+-- 1 rows selected.
+SET FEEDBACK OFF
 --old value > new value
 SET VERIFY OFF
 SET LINES 999 PAGES 999
@@ -10,3 +12,5 @@ ALTER SESSION SET NLS_LANGUAGE='AMERICAN';
 alias load https://raw.githubusercontent.com/msavdert/sql/master/aliases.xml
 
 @https://raw.githubusercontent.com/msavdert/sql/master/i.sql
+
+SET FEEDBACK ON
