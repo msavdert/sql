@@ -32,7 +32,7 @@
             </query>
         </queries>
     </alias>
-    <alias name="whoami">
+    <alias name="w">
         <description><![CDATA[show whoami output]]></description>
         <queries>
             <query>
@@ -125,6 +125,22 @@
         <queries>
             <query>
                 <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\kill :sid :serial :inst_id]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="tunemem">
+        <description><![CDATA[tune memory]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\tunemem]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="dbsize">
+        <description><![CDATA[show database total size]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\dbsize]]></sql>
             </query>
         </queries>
     </alias>
