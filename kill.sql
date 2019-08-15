@@ -1,9 +1,12 @@
 SELECT
   'ALTER SYSTEM KILL SESSION '''
-  ||:sid
+  ||sid
   ||','
-  ||:serial
+  ||serial#
   ||',@'
-  ||:inst_id
-  || ''' IMMEDIATE;' Kill_Script
-FROM gv$session;
+  ||inst_id
+  || ''' IMMEDIATE;' Kill_Script 
+FROM gv$session
+WHERE sid=:sid
+  AND serial#=:serial
+  AND inst_id=:inst_id;
