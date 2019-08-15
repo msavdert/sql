@@ -144,7 +144,7 @@
             </query>
         </queries>
     </alias>
-    <alias name="backup">
+    <alias name="sqlmon">
         <description><![CDATA[sqlmon <session_id> - Spool a SQL Monitoring report to a local HTML file and open it]]></description>
         <queries>
             <query>
