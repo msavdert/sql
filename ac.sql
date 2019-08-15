@@ -8,14 +8,7 @@ SELECT inst_id,
   sql_exec_id,
 SQL_HASH_VALUE,
   event,
-  wait_class, 
-  'ALTER SYSTEM KILL SESSION '''
-  ||sid
-  ||','
-  ||serial#
-  ||',@'
-  ||inst_id
-  || ''' IMMEDIATE;' Kill_Script 
+  wait_class
 FROM gv$session
 WHERE type NOT LIKE 'BACKGROUND'
 AND STATUS LIKE 'ACTIVE'
