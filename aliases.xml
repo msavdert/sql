@@ -200,4 +200,12 @@
             </query>
         </queries>
     </alias>
+    <alias name="xpi">
+        <description><![CDATA[xpi <sql_id> - Explain a SQL statements execution plan from given SQL_ID]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\xpi :1]]></sql>
+            </query>
+        </queries>
+    </alias>
 </aliases>
