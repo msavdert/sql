@@ -168,4 +168,12 @@
             </query>
         </queries>
     </alias>
+    <alias name="advisor">
+        <description><![CDATA[advisor <sql_id> - sql tuning]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\advisor :sql_id]]></sql>
+            </query>
+        </queries>
+    </alias>
 </aliases>
