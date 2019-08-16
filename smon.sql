@@ -132,6 +132,8 @@ SELECT /*+NO_MONITOR*/
     END AS duration,
     decode(m.plsql_object_id, NULL, 'SQL', 'PL/SQL') AS type,
     m.sql_id                   AS sql_id,
+    m.sql_exec_id              AS sql_exec_id,
+    to_char(m.sql_exec_start, 'DD-Mon-YYYY HH24:MI:SS') AS "Start Time",
     m.sql_plan_hash_value      AS plan_hash_value,
     nvl(m.username, ' ') AS username,
     m.inst_id                  AS inst_id,
@@ -192,16 +194,14 @@ SELECT /*+NO_MONITOR*/
             to_char(round((m.buffer_gets) / 1000000000, 0))
             || 'G'
     END AS "Buffer Gets",
-    to_char(m.sql_exec_start, 'DD-Mon-YYYY HH24:MI:SS') AS "Start Time",
-    to_char(m.last_refresh_time, 'DD-Mon-YYYY HH24:MI:SS') AS "End Time",
-    SUBSTR(m.sql_text,1,50)    AS sql_text
+-- to_char(m.last_refresh_time, 'DD-Mon-YYYY HH24:MI:SS') AS "End Time",
+    SUBSTR(m.sql_text,1,30)    AS sql_text
 --  m.sid                      AS session_id,
 --  m.session_serial#          AS session_serial_no,
 --  m.user#                    AS user_no,
 --  m.module                   AS module,
 --  m.service_name             AS service_name,
 --  m.program                  AS program,
---  m.sql_exec_id              AS sql_exec_id,
 --  m.sql_exec_start           AS sql_exec_start
 FROM
     sql_monitor          m,
