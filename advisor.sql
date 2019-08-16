@@ -2,7 +2,7 @@ SET SERVEROUTPUT ON
 declare
 stmt_task VARCHAR2(40);
 begin
-stmt_task := DBMS_SQLTUNE.CREATE_TUNING_TASK(sql_id => ':sql_id', time_limit => 3600);
+stmt_task := DBMS_SQLTUNE.CREATE_TUNING_TASK(sql_id => :sql_id, time_limit => 3600);
 DBMS_OUTPUT.put_line('task_id: ' || stmt_task );
 dbms_output.new_line();
 DBMS_OUTPUT.put_line('You can execute task using below syntax');
