@@ -13,5 +13,5 @@ SELECT
   ROUND(java_exec_time       /1000000,3)   AS "Java exec (s)"
 FROM v$sql_monitor
 WHERE sql_id = :sql_id
-  AND sql_exec_id = :sql_exec_id
-  AND sql_exec_start=TO_DATE(:sql_exec_start,'dd-mon-yyyy hh24:mi:ss');
+  AND sql_exec_id = :sql_exec_id;
+--AND sql_exec_start=TO_DATE(:sql_exec_start,'dd-mon-yyyy hh24:mi:ss');
