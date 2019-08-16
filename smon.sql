@@ -195,7 +195,7 @@ SELECT /*+NO_MONITOR*/
             || 'G'
     END AS "Buffer Gets",
 -- to_char(m.last_refresh_time, 'DD-Mon-YYYY HH24:MI:SS') AS "End Time",
-    SUBSTR(m.sql_text,1,30)    AS sql_text
+    SUBSTR(SQL_TEXT, 0, 30) || ' ...' AS sql_text
 --  m.sid                      AS session_id,
 --  m.session_serial#          AS session_serial_no,
 --  m.user#                    AS user_no,
