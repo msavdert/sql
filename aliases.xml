@@ -184,4 +184,20 @@
             </query>
         </queries>
     </alias>
+    <alias name="xms">
+        <description><![CDATA[Explain your last SQL statements execution plan with execution profile directly from library cache]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\xms]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="xm">
+        <description><![CDATA[xm <hash_value> <child_number> - Explain a SQL statements execution plan directly from library cache]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\xm :1 :2]]></sql>
+            </query>
+        </queries>
+    </alias>
 </aliases>
