@@ -160,4 +160,12 @@
             </query>
         </queries>
     </alias>
+    <alias name="awr_plan_change">
+        <description><![CDATA[smond <sql_id> - SQL execution plan change]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\awr_plan_change :1]]></sql>
+            </query>
+        </queries>
+    </alias>
 </aliases>
