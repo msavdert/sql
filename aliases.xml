@@ -152,4 +152,12 @@
             </query>
         </queries>
     </alias>
+    <alias name="smond">
+        <description><![CDATA[smond <sql_id> <sql_exec_id> <sql_exec_start> - sql monitor details]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\smond :sql_id :sql_exec_id :sql_exec_start]]></sql>
+            </query>
+        </queries>
+    </alias>
 </aliases>
