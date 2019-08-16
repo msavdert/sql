@@ -2,7 +2,7 @@
 -- Licensed under the Apache License, Version 2.0. See LICENSE.txt for terms & conditions.
 
 --prompt Running DBMS_SQLTUNE.REPORT_SQL_MONITOR for SID &3....
-
+SET sqlformat
 SET HEADING OFF
 
 SELECT
@@ -14,3 +14,4 @@ FROM dual
 /
 
 SET HEADING ON
+SET sqlformat ansiconsole
