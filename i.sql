@@ -13,7 +13,7 @@ select
    i.instance_number inst,
    to_char(s.sid) sid,
    to_char(s.serial#) serial,
-   (select substr(banner, instr(banner, 'Release ')+8,10) from v$version where rownum = 1) version,
+   (select substr(banner, instr(banner, 'Release ')+8,10) from v$version where rownum = 1) release,
 -- (select  substr(substr(banner, instr(banner, 'Release ')+8),1,instr(substr(banner, instr(banner, 'Release ')+8),'.')-1) from v$version where rownum = 1) myoraver,
    to_char(startup_time, 'DD-MON-YY') startup_day,
    trim(p.spid) spid,
