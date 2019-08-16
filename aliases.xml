@@ -169,10 +169,18 @@
         </queries>
     </alias>
     <alias name="advisor">
-        <description><![CDATA[advisor <sql_id> - sql tuning]]></description>
+        <description><![CDATA[advisor <sql_id> - sql tuning advisor]]></description>
         <queries>
             <query>
                 <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\advisor :sql_id]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="plan">
+        <description><![CDATA[plan <sql_id> - show sql plan]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\plan :sql_id]]></sql>
             </query>
         </queries>
     </alias>
