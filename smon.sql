@@ -1,3 +1,5 @@
+DEF v_minute = '&1'
+
 WITH sql_monitor_stats AS (
     SELECT
         m.sql_id,
@@ -206,6 +208,6 @@ SELECT /*+NO_MONITOR*/
 FROM
     sql_monitor          m,
     sql_monitor_limits   l
-WHERE m.sql_exec_start > (SYSTIMESTAMP - INTERVAL '&1' MINUTE) 
+WHERE m.sql_exec_start > (SYSTIMESTAMP - INTERVAL '&v_minute' MINUTE) 
 -- m.sql_exec_start > sysdate-1/48
 ORDER BY m.sql_exec_start DESC;
