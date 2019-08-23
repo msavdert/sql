@@ -1,4 +1,4 @@
-SET sqlprompt "@|cyan _user'@'_connect_identifier> |@"
+SET sqlprompt "@|cyan _date _user'@'_connect_identifier> |@"
 SET sqlformat ansiconsole
 -- 1 rows selected.
 SET FEEDBACK OFF
