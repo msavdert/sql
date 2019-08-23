@@ -84,7 +84,7 @@
         <description><![CDATA[ smon <minute> - sql monitor last <minute>]]></description>
         <queries>
             <query>
-                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\smon]]></sql>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\smon :1]]></sql>
             </query>
         </queries>
     </alias>
