@@ -137,7 +137,7 @@ SELECT /*+NO_MONITOR*/
     m.sql_plan_hash_value      AS plan_hash_value,
     nvl(m.username, ' ') AS username,
     m.inst_id                  AS inst_id,
-    decode(m.px_maxdop, NULL, ' ', to_char(m.px_maxdop)) AS parallel,
+    decode(m.px_maxdop, NULL, ' ', to_char(m.px_maxdop)) AS "DOP",
     CASE
         WHEN m.database_time < 1000000  THEN
             to_char(round(m.database_time / 1000, 1))
@@ -206,5 +206,6 @@ SELECT /*+NO_MONITOR*/
 FROM
     sql_monitor          m,
     sql_monitor_limits   l
-WHERE m.sql_exec_start > sysdate-1/48
+WHERE m.sql_exec_start > (SYSTIMESTAMP - INTERVAL :1 MINUTE) 
+-- m.sql_exec_start > sysdate-1/48
 ORDER BY m.sql_exec_start DESC;
