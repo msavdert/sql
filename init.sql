@@ -1,5 +1,5 @@
 SET sqlprompt "@|cyan _date _user'@'_connect_identifier> |@"
-SET sqlformat ansiconsole -config=highlight.json
+SET sqlformat ansiconsole -config=https://raw.githubusercontent.com/msavdert/sql/master/highlight.json
 -- 1 rows selected.
 SET FEEDBACK OFF
 --old value > new value
