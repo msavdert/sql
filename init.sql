@@ -1,8 +1,5 @@
-set define ^
-SET sqlformat ansiconsole
-
 SET sqlprompt "@|cyan _date _user'@'_connect_identifier> |@"
-
+SET sqlformat ansiconsole
 -- 1 rows selected.
 SET FEEDBACK OFF
 --old value > new value
