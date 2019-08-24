@@ -1,0 +1,27 @@
+{
+ "example":[
+ {"type":"startWith","test":"W","color":"INTENSITY_BOLD,CYAN"},
+ {"type":"endWith","test":"MAN","color":"BLUE"},
+ {"type":"contains","test":"MIT","color":"YELLOW"},
+ {"type":"exact","test":"FORD","color":"GREEN"},
+ {"type":"regex","test":"[0-9]{2}","color":"MAGENTA"}
+],
+ "highlights":[
+  {"type":"exact","test":"READ WRITE","color":"GREEN"},
+  {"type":"exact","test":"FAILED","color":"RED"},
+  {"type":"exact","test":"READ ONLY","color":"BLUE"},
+  {"type":"exact","test":"MOUNTED","color":"ORANGE"},
+  {"type":"exact","test":"COMPLETED","color":"GREEN"},
+  {"type":"exact","test":"ON","color":"GREEN"},
+  {"type":"exact","test":"OFF","color":"BLUE"},
+  {"type":"exact","test":"Auto index execution start","color":"MAGENTA"},
+  {"type":"exact","test":"Auto index execution end","color":"MAGENTA"},
+  {"type":"exact","test":"Statement improved","color":"GREEN"},
+  {"type":"exact","test":"New index candidate","color":"CYAN"},
+  {"type":"exact","test":"Index created","color":"YELLOW"},
+  {"type":"exact","test":"Index rebuilt","color":"YELLOW"},
+  {"type":"exact","test":"Index marked visible","color":"YELLOW"},
+  {"type":"exact","test":"_AUTO_INDEX_TASK_INTERVAL","color":"GREEN"},
+  {"type":"exact","test":"AUTO_INDEX_MODE","color":"GREEN"}
+]
+}
