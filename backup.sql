@@ -2,10 +2,7 @@ SELECT
          TO_CHAR (start_time, 'DD-MM-YYYY hh24:mi:ss') start_time,
          TO_CHAR (end_time, 'DD-MM-YYYY hh24:mi:ss') end_time,
          output_device_type device_type,
-         case 
-             when status != 'COMPLETED' and status != 'RUNNING' then '@|red '||status||'|@'
-             else ''||status||''
-         end as status,
+         status,
          time_taken_display time_taken,
          ROUND (elapsed_seconds / 60, 0) elaps_min,
          ROUND(compression_ratio,1) comp_ratio,
