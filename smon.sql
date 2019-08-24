@@ -1,5 +1,3 @@
-column sql_text format a30 word_wrapped
-
 WITH sql_monitor_stats AS (
     SELECT
         m.sql_id,
@@ -136,7 +134,7 @@ SELECT /*+NO_MONITOR*/
     m.sql_id                   AS sql_id,
     m.sql_exec_id              AS sql_exec_id,
     to_char(m.sql_exec_start, 'DD-Mon-YYYY HH24:MI:SS') AS "Start Time",
-    m.sql_plan_hash_value      AS plan_hash_value,
+    m.sql_plan_hash_value      AS sql_phv,
     nvl(m.username, ' ') AS username,
     m.inst_id                  AS inst_id,
     decode(m.px_maxdop, NULL, ' ', to_char(m.px_maxdop)) AS "DOP",
@@ -150,7 +148,7 @@ SELECT /*+NO_MONITOR*/
         ELSE
             to_char(round(m.database_time / 60000000, 1))
             || ' m'
-    END AS database_time,
+    END AS "Database Time",
     CASE
         WHEN m.cpu_time < 1000000  THEN
             to_char(round(m.cpu_time / 1000, 1))
@@ -161,7 +159,7 @@ SELECT /*+NO_MONITOR*/
         ELSE
             to_char(round(m.cpu_time / 60000000, 1))
             || ' m'
-    END AS cpu_time,
+    END AS "CPU Time",
     CASE
         WHEN m.physical_read_requests < 1000 THEN
             to_char(m.physical_read_requests)
@@ -197,7 +195,7 @@ SELECT /*+NO_MONITOR*/
             || 'G'
     END AS "Buffer Gets",
 -- to_char(m.last_refresh_time, 'DD-Mon-YYYY HH24:MI:SS') AS "End Time",
-    SUBSTR(SQL_TEXT, 0, 30) || '...' AS sql_text
+    LTRIM(translate(SUBSTR(SQL_TEXT, 0, 30), chr(10)||chr(11)||chr(13), '  ')) || '...' AS "SQL Text"
 --  m.sid                      AS session_id,
 --  m.session_serial#          AS session_serial_no,
 --  m.user#                    AS user_no,
