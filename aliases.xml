@@ -81,10 +81,10 @@
         </queries>
     </alias>
     <alias name="smon">
-        <description><![CDATA[smon - sql monitor last 60 minutes]]></description>
+        <description><![CDATA[smon <minute> - show error last <minute> minutes]]></description>
         <queries>
             <query>
-                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\smon]]></sql>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\smon :1]]></sql>
             </query>
         </queries>
     </alias>
