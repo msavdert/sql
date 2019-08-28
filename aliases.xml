@@ -208,4 +208,28 @@
             </query>
         </queries>
     </alias>
+    <alias name="taila">
+        <description><![CDATA[taila <minute> - show alert log]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\taila :1]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="tailaora">
+        <description><![CDATA[tailaora <minute> - show alert log with ORA errors]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\tailaora :1]]></sql>
+            </query>
+        </queries>
+    </alias>
+    <alias name="sqladvawr">
+        <description><![CDATA[sql advisor AWR]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\sqladvawr]]></sql>
+            </query>
+        </queries>
+    </alias>
 </aliases>
