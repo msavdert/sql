@@ -232,4 +232,12 @@
             </query>
         </queries>
     </alias>
+    <alias name="err">
+        <description><![CDATA[err <minute> - show error ]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\err :1]]></sql>
+            </query>
+        </queries>
+    </alias>
 </aliases>
