@@ -206,5 +206,5 @@ SELECT /*+NO_MONITOR*/
 FROM
     sql_monitor          m,
     sql_monitor_limits   l
-WHERE m.sql_exec_start > sysdate-1/48
+WHERE m.sql_exec_start > sysdate- :1/1440
 ORDER BY m.sql_exec_start DESC;
