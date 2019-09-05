@@ -16,6 +16,14 @@
             </query>
         </queries>
     </alias>
+    <alias name="uc">
+        <description><![CDATA[show uncommitted sessions]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\uc]]></sql>
+            </query>
+        </queries>
+    </alias>
     <alias name="backup">
         <description><![CDATA[backup <DAY> - show last N DAY Backup]]></description>
         <queries>
