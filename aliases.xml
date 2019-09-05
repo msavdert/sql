@@ -240,4 +240,12 @@
             </query>
         </queries>
     </alias>
+    <alias name="topsql">
+        <description><![CDATA[topsql <minute> - show top SQL last <minute> ]]></description>
+        <queries>
+            <query>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\topsql :1]]></sql>
+            </query>
+        </queries>
+    </alias>
 </aliases>
