@@ -13,7 +13,7 @@ SELECT *
                  sess.event,
                  sess.wait_class
             FROM gv$active_session_history ash, gv$session sess
-           WHERE     sample_time >= SYSDATE - (1 / 24 / 60 / 60) * 60
+           WHERE sample_time >= SYSDATE - :1/1440
                  AND session_type <> 'BACKGROUND'
                  AND ash.INST_ID = sess.INST_ID
                  AND ash.SESSION_ID = sess.SID
