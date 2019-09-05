@@ -216,11 +216,11 @@
             </query>
         </queries>
     </alias>
-    <alias name="tailaora">
-        <description><![CDATA[tailaora <minute> - show alert log with ORA errors]]></description>
+    <alias name="tailora">
+        <description><![CDATA[tailora <minute> - show alert log with ORA errors]]></description>
         <queries>
             <query>
-                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\tailaora :1]]></sql>
+                <sql><![CDATA[@https://raw.githubusercontent.com/msavdert/sql/master\tailora :1]]></sql>
             </query>
         </queries>
     </alias>
